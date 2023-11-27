@@ -1,0 +1,27 @@
+
+
+plugins {
+    id("java")
+    id("org.springframework.boot") version "3.2.0"
+    id("io.spring.dependency-management") version "1.1.4"
+}
+
+dependencies {
+    implementation(project(":api"))
+    implementation(project(":api:error-message"))
+    implementation(project(":app:grpc-client"))
+    implementation(project(":proto-generated:service-generated"))
+    implementation(project(":proto-generated:message-generated"))
+    implementation("org.springframework:spring-jdbc:6.1.1")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.kafka:spring-kafka")
+    implementation("org.liquibase:liquibase-core:4.25.0")
+    implementation("org.springframework.boot:spring-boot-autoconfigure")
+    implementation("org.springframework.boot:spring-boot-actuator")
+    implementation("org.springframework.boot:spring-boot-actuator-autoconfigure")
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
+    developmentOnly("org.springframework.boot:spring-boot-docker-compose")
+    runtimeOnly("com.mysql:mysql-connector-j:8.1.0")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}

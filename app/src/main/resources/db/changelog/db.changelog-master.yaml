@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: '2023-25-11/init-schema.sql'
+      relativeToChangelogFile: true

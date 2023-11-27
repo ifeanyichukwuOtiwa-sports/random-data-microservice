@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: ${SPRING_DATABASE_URL:jdbc:mysql://localhost:13306/random_person}
+    password: ${SPRING_DATABASE_PASSWORD:123456}
+    username: ${SPRING_DATABASE_USER:root}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS://localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+  liquibase:
+    url: ${spring.datasource.url}
+rest:
+  client:
+    timeout-millis:
+      read: ${REST_CLIENT_READ_TIMEOUTS:3000}
+      connection: ${REST_CLIENT_CONNECTION_TIMEOUTS:3000}

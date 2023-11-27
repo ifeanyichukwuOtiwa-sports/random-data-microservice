@@ -1,0 +1,4 @@
+dependencies {
+    protobuf(files("../../lib/message-proto-1.0.jar"))
+    compileOnly("org.apache.tomcat:annotations-api:6.0.53")
+}
